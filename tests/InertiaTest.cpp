@@ -243,6 +243,8 @@ BOOST_AUTO_TEST_CASE(RBInertiadLeftOperatorsTest)
 
 #ifdef __i386__
   BOOST_CHECK_SMALL((fVec.vector() - fVecRes6Xd.col(0)).array().abs().sum(), TOL);
+#elif __arm__
+  BOOST_CHECK_SMALL((fVec.vector() - fVecRes6Xd.col(0)).array().abs().sum(), TOL);
 #else
   BOOST_CHECK_EQUAL(fVec.vector(), fVecRes6Xd.col(0));
 #endif
